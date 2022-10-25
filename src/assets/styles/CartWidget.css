@@ -1,0 +1,34 @@
+/* codigo carrito logo */
+.shoping__cart{
+  width: 40px;
+}
+.shoping__cart img {
+  width: 100%;
+}
+  /* CSS para posicionar el bade cerca del carrito*/
+  .cart {
+    position: relative;
+  }
+  
+  #cart_menu_num {
+    position: absolute;
+    top: 0;
+    left: 55%;
+    background: red;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 2px;
+  }
+  @media(min-width:992px){
+    .media{
+        display: flex;
+    }
+    .shoping__cart{
+        order: 3;
+    }
+}
