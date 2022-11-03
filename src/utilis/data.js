@@ -6,6 +6,3 @@ const data =  [
          price: 2000   
     }
 ];
-module.exports = {
-    data
-}
