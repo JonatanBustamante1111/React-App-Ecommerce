@@ -9,6 +9,7 @@ function App() {
     <>
     <NavBar/>
     <ItemListContainer greeting="Bienvenidos"/>
+    
     </>
   );
 }
