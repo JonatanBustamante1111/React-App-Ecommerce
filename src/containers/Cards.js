@@ -1,23 +1,25 @@
 import { useState,useEffect } from 'react'
 import { data } from '../utilis/data'
-import { customFetch } from '../utilis/customFetch'
 import CardComponent from '../components/CardComponent'
 
+
+// esta funcion renderiza las componentes de los libros en un contenedor padre
 const Cards = () => {
-    const [date, setDate] = useState([])
+    const [datos, setDate] = useState([])
 
 
     useEffect (() => {
-        customFetch (2000, data)
-            .then(response => setDate(response))
-            .cath(err => console.log(err))
-    } , [])
+        setTimeout(() => {
+            setDate(data);
+        },2000);
+    } , []);
 
 
     return(
         <>
+        <div className='d-flex align-items-center flex-wrap justify-content-center gap-3'>
             {
-                 date.map(element =>(
+                 datos.map(element =>(
                     <CardComponent
                     img = {element.img}
                     title = {element.title}
@@ -25,8 +27,9 @@ const Cards = () => {
                     price = {element.price}
                     />
                  ))
+           
             }
-        
+        </div>    
         </>
     )
 

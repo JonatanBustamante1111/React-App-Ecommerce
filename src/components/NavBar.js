@@ -14,7 +14,7 @@ const NavBar = () => {
     <Navbar bg="light" expand="lg">
         <Container className="bg-success p-3" fluid bg="light">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Brand className="text-center" href="#home">IT solutions</Navbar.Brand>
+        <Navbar.Brand className="text-center" href="#home">DON LIBRO</Navbar.Brand>
         <div className="shoping__cart cart">
         <a href="../"><CartWidget/><span id="cart_menu_num" data-action="cart-can" class="badge rounded-circle">1</span></a>
         </div>
@@ -29,9 +29,6 @@ const NavBar = () => {
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

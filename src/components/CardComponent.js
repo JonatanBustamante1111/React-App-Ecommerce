@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 
 function CardComponent(props) {
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card className='p-2 gap' style={{ width: '18rem' }}>
       <Card.Img variant="top" src={props.img} />
       <Card.Body>
         <Card.Title>{props.title}</Card.Title>
@@ -11,7 +11,7 @@ function CardComponent(props) {
           {props.description}
         </Card.Text>
         <Card.Title>{props.price}</Card.Title>
-        <Button variant="primary">Agregar</Button>
+        <Button className='' variant="primary">Agregar</Button>
       </Card.Body>
     </Card>
   );

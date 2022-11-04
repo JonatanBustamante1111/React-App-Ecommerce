@@ -1,8 +1,9 @@
 import Cards from "../containers/Cards";
+import Wrapper from "./Wrapper";
 const ItemListContainer =  ({greeting}) => {
     return(
         <>
-        <h1 className="text-center">{greeting}</h1>
+        <Wrapper>{greeting}</Wrapper>
         <Cards/>
         </>
     )
