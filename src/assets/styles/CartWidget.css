@@ -35,10 +35,12 @@
 
 
 /* contenedor principal */
-
-#basic-navbar-nav{
- padding-left: 150px;
+@media (min-width:992px){
+  #basic-navbar-nav{
+    padding-left: 150px;
+   }
 }
+
 .navbar{
   margin-bottom: 100px;
   box-shadow: 30px 30px 30px 9px rgba(0, 0, 0, 0.9);
