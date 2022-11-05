@@ -17,7 +17,7 @@ const Cards = () => {
 
     return(
         <>
-        <div className='d-flex align-items-center flex-wrap justify-content-center gap-3'>
+        <div  className='d-flex align-items-center flex-wrap justify-content-center gap-3 back-ground'>
             {
                  datos.map(element =>(
                     <CardComponent
