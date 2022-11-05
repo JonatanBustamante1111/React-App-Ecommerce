@@ -4,6 +4,7 @@ import "../assets/styles/CardComponent.css"
 function CardComponent(props) {
   return (
     <>
+    <div className="contenedor-principal">
     <figure class="snip1268">
   <div className="image">
     <img  src={props.img} alt="sq-sample4"/>
@@ -20,6 +21,8 @@ function CardComponent(props) {
     <div className="price">{props.price}</div>
   </figcaption>
 </figure>
+    </div>
+    
 </>
     // <Card className='p-2 gap' style={{ width: '18rem' }}>
     //   <Card.Img variant="top" src={props.img} />

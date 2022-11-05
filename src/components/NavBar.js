@@ -12,9 +12,9 @@ const NavBar = () => {
   return(
     <>
     <Navbar bg="light" expand="lg">
-        <Container className="bg-success p-3" fluid bg="light">
+        <Container className="navbar-cont bg-light p-3 fixed-top " fluid bg="light">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Brand className="text-center" href="#home">DON LIBRO</Navbar.Brand>
+        <Navbar.Brand className="text-center" href="#home"> DON LIBRO</Navbar.Brand>
         <div className="shoping__cart cart">
         <a href="../"><CartWidget/><span id="cart_menu_num" data-action="cart-can" class="badge rounded-circle">1</span></a>
         </div>
