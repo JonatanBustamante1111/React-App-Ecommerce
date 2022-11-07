@@ -32,3 +32,11 @@
         order: 3;
     }
 }
+
+
+/* contenedor principal */
+@media (min-width:992px){
+  #basic-navbar-nav{
+    padding-left: 150px;
+   }
+}

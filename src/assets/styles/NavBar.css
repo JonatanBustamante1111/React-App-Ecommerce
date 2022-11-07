@@ -1,12 +1,4 @@
-.dropdown-menu.show{
-    background-color: rgba(25, 135, 84, 1);
-}
-.navbar{
-    background-color: rgba(25, 135, 84, 1) !important;
-}
-.container-fluid {
-    padding: 0 !important;
-  }
+
 @media(min-width:992px){
 
     .navbar-collapse{
