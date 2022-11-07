@@ -55,13 +55,13 @@
   width: 32.5%;
   background: #000000;
 }
-.snip1268 .icons a:hover {
+/* .snip1268 .icons a:hover {
   background: #ffffff;
 }
 .snip1268 .icons a:hover i {
   opacity: 1;
   color: #000000;
-}
+} */
 .snip1268 .icons i {
   line-height: 46px;
   font-size: 20px;
@@ -84,10 +84,10 @@
   text-decoration: none;
   text-transform: uppercase;
 }
-.snip1268 .add-to-cart:hover {
+/* .snip1268 .add-to-cart:hover {
   background-color: #ffffff;
   color: #000000;
-}
+} */
 .snip1268 figcaption {
   padding: 20px 20px 30px;
 }
