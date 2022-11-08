@@ -16,7 +16,7 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Brand className="text-center" href="#home"> DON LIBRO</Navbar.Brand>
         <div className="shoping__cart cart">
-        <a href="../"><CartWidget/><span id="cart_menu_num" data-action="cart-can" class="badge rounded-circle">1</span></a>
+        <a href="../"><CartWidget/><span id="cart_menu_num" data-action="cart-can" className="badge rounded-circle">1</span></a>
         </div>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto text-center">
