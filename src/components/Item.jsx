@@ -1,4 +1,5 @@
 import "../assets/styles/Item.css"
+import { Link } from "react-router-dom";
 // funcion que renderiza
 const  Item = ({id,img,name,description,price}) => {
   return (
@@ -10,7 +11,7 @@ const  Item = ({id,img,name,description,price}) => {
             <div className="icons d-flex justify-content-center">
               {/* <a href="#"><i className="ion-star"></i></a> */}
               {/* <a href="#"> <i className="ion-share"></i></a> */}
-              <a href="#"> <i class="ion-search"></i></a>
+              <Link to={`/item/${id}`}><i class="ion-search"></i></Link>
             </div>
             <a href="#" id={id} class="add-to-cart">Agregar a Carrito</a>
           </div>

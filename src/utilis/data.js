@@ -4,9 +4,10 @@ export const data =  [
          title : 'titulo',
          description : 'Esto es una descripcion',
          price: 2000,
+         categoryId:"3",
          category:{
         name:'Desarrollo Personal',
-        id: 1
+        id: 3
     }   
     },
     {   id : 2,
@@ -14,9 +15,10 @@ export const data =  [
         title : 'titulo',
         description : 'Esto es una descripcion',
         price: 2000,
+        categoryId:"3",
         category:{
         name:'Desarrollo Personal',
-        id: 1
+        id: 3
     }   
    },
    {    id : 3,
@@ -24,9 +26,10 @@ export const data =  [
     title : 'titulo',
     description : 'Esto es una descripcion',
     price: 2000,
+    categoryId:"5",
     category:{
-        name:'Desarrollo Personal',
-        id: 3
+        name:'liderazgo',
+        id: 5
     }   
 },
 {   id : 4,
@@ -34,9 +37,10 @@ export const data =  [
     title : 'titulo',
     description : 'Esto es una descripcion',
     price: 2000,
+    categoryId:"1",
     category:{
-        name:'Desarrollo Personal',
-        id: 3
+        name:'Finanzas',
+        id: 1
     }   
 },
 {   id : 5,
@@ -44,9 +48,10 @@ export const data =  [
     title : 'titulo',
     description : 'Esto es una descripcion',
     price: 2000,
+    categoryId:"3",
     category:{
         name:'Desarrollo Personal',
-        id: 5
+        id: 3
     }   
 },
 {   id : 6,
@@ -54,9 +59,10 @@ export const data =  [
     title : 'titulo',
     description : 'Esto es una descripcion',
     price: 2000,
+    categoryId:"5",
     category:{
         name:'Desarrollo Personal',
-        id: 1
+        id: 3   
     }
 },
 {
@@ -65,9 +71,10 @@ export const data =  [
     title : 'titulo',
     description : 'Esto es una descripcion',
     price: 2000,
+    categoryId:"5",
     category:{
-        name:'Desarrollo Personal',
-        id: 3
+        name:'Liderazgo',
+        id: 5
     }
 },
 {
@@ -76,9 +83,10 @@ export const data =  [
     title : 'titulo',
     description : 'Esto es una descripcion',
     price: 2000,
+    categoryId:"3",
     category:{
         name:'Desarrollo Personal',
-        id: 5
+        id: 3
     }
 },
 {
@@ -87,8 +95,9 @@ export const data =  [
     title : 'titulo',
     description : 'Esto es una descripcion',
     price: 2000,
+    categoryId:"1",
     category:{
-        name:'Desarrollo Personal',
+        name:'Finanzas',
         id: 1
     }
 },
@@ -97,8 +106,9 @@ export const data =  [
     title : 'titulo',
     description : 'Esto es una descripcion',
     price: 2000,
+    categoryId:"1",
     category:{
-        name:'Desarrollo Personal',
+        name:'Finanzas',
         id: 3
     }   
 }

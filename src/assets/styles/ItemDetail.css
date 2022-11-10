@@ -1,0 +1,8 @@
+.image_detail img{
+    width: 260px;
+    height: 380px;
+}
+@media (min-width: 300px) and (max-width: 500px) {
+    
+  }
+  
