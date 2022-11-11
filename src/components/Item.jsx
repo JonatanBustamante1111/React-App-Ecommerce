@@ -13,7 +13,7 @@ const  Item = ({id,img,name,description,price}) => {
               {/* <a href="#"> <i className="ion-share"></i></a> */}
               <Link to={`/item/${id}`}><i class="ion-search"></i></Link>
             </div>
-            <a href="#" id={id} class="add-to-cart">Agregar a Carrito</a>
+            <Link   class="add-to-cart">Agregar a Carrito</Link>
           </div>
           <figcaption>
             <h2>{name}</h2>
