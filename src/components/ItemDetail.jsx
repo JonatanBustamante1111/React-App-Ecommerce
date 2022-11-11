@@ -10,7 +10,7 @@ const ItemDetail = ({ img, title, description, price }) => {
                 <div className="">
                     <h2 className="my-2 text-right fs-9 fw-bold text-uppercase">{title}</h2>
                     <p className="my-2">{description}</p>
-                    <h3 className="my-5 fw-bold">{`$ ${price}`}</h3>
+                    <h3 className="my-4 fw-bold">{`$ ${price}`}</h3>
                     <ItemCount />
                 </div>
               </div>
