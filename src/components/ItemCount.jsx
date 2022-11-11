@@ -11,6 +11,9 @@ const ItemCount = () => {
         setCount(count - 1);
     }
 
+    if(count < parseInt(1)){
+        setCount(count+1);  
+    }
     return (
         <div className="d-flex gap-3 justify-content-center w-100">
             <div className='px-2 d-flex gap-2 align-items-center'>
