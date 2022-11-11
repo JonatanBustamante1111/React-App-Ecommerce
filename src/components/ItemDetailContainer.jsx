@@ -9,7 +9,7 @@ const ItemDetailContainer =  () => {
     const { idItem } = useParams()
     useEffect (() => {
         setTimeout(() => {
-            setDato(data.find(item => item.id == idItem));
+            setDato(data.find(item => item.id === parseInt(idItem) ));
         },2000);
     }, [idItem]);
 
