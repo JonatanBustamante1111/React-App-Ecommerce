@@ -11,8 +11,6 @@ const ItemList = ({items}) => {
                 key={item.id} 
                 id={item.id} 
                 img = {item.img} 
-                title = {item.title} 
-                description = {item.description} 
                 price = {item.price} />
                 )
         : <p>Cargando...</p>

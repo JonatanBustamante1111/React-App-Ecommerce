@@ -1,7 +1,7 @@
 import "../assets/styles/Item.css"
 import { Link } from "react-router-dom";
 // funcion que renderiza
-const  Item = ({id,img,name,description,price}) => {
+const  Item = ({id,img,price}) => {
   return (
     <>
       <div className="contenedor-principal">
@@ -16,8 +16,6 @@ const  Item = ({id,img,name,description,price}) => {
             <Link   class="add-to-cart">Agregar a Carrito</Link>
           </div>
           <figcaption>
-            <h2>{name}</h2>
-            <p>{description}</p>
             <div className="price">${price}</div>
           </figcaption>
         </figure>

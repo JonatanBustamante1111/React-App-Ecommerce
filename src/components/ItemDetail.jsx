@@ -1,17 +1,24 @@
 import "../assets/styles/ItemDetail.css"
 import ItemCount from "./ItemCount"
 
-const ItemDetail = ({ img, title, description, price }) => {
+const ItemDetail = ({item}) => {
+
+    const onAdd = () => {
+        console.log('ok')
+    }
 
     return (
-        price !== undefined
-            ? <div className="image_detail d-flex flex-column align-items-center flex-md-row justify-content-md-evenly p-md-5">
-                <img  src={img} alt="" />
+        item.price !== undefined
+            ? <div className="image_detail d-flex flex-column align-items-center p-3 gap-3 flex-md-row justify-content-md-evenly p-md-5 ">
+                <img  src={item.img} alt="" />
                 <div className="">
-                    <h2 className="my-2 text-right fs-9 fw-bold text-uppercase">{title}</h2>
-                    <p className="my-2">{description}</p>
-                    <h3 className="my-4 fw-bold">{`$ ${price}`}</h3>
+                    <h2 className="my-2 text-right fs-9 fw-bold text-uppercase">{item.title}</h2>
+                    <p className="my-2">{item.description}</p>
+                    <h3 className="my-4 fw-bold">{`$ ${item.price}`}</h3>
+                    <div className="d-flex gap-3 justify-content-center w-100">
                     <ItemCount />
+                    <button className="btn btn-primary" onClick={onAdd}>ADD TO CART</button>
+                    </div>
                 </div>
               </div>
             : <p className="text-center">Cargando...</p>
