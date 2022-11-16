@@ -1,10 +1,15 @@
+import { useContext } from "react"
 import "../assets/styles/ItemDetail.css"
+import { CartContext } from "./CartContext"
 import ItemCount from "./ItemCount"
 
 const ItemDetail = ({item}) => {
+    const {addToCart} = useContext(CartContext)
 
     const onAdd = () => {
         console.log('ok')
+        addToCart(item)
+
     }
 
     return (

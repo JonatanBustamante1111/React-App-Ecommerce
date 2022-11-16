@@ -17,14 +17,14 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Brand className="text-center"><Link className="text-decoration-none text-dark" to='/'>DON LIBRO</Link></Navbar.Brand>
         <div className="shoping__cart cart">
-        <a href="../"><CartWidget/><span id="cart_menu_num" data-action="cart-can" className="badge rounded-circle">1</span></a>
+        <Link to='/cart'><CartWidget/><span id="cart_menu_num" data-action="cart-can" className="badge rounded-circle">1</span></Link>
         </div>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto text-center">
             {/* <Nav.Link><Link className="text-decoration-none text-dark" to='/' >Inicio</Link></Nav.Link> */}
-            <Nav.Link><Link className="text-decoration-none text-dark" to='/category/1' >Finanzas</Link></Nav.Link>
-            <Nav.Link><Link className="text-decoration-none text-dark" to='/category/3' >Desarrollo Personal</Link></Nav.Link>
-            <Nav.Link><Link className="text-decoration-none text-dark" to='/category/5' >Liderazgo</Link></Nav.Link>
+            <Link className="text-decoration-none text-dark p-2" to='/category/1' >Finanzas</Link>
+            <Link className="text-decoration-none text-dark p-2" to='/category/3' >Desarrollo Personal</Link>
+            <Link className="text-decoration-none text-dark p-2" to='/category/5' >Liderazgo</Link>
             {/* <NavDropdown title="Productos" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
