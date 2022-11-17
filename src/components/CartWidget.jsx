@@ -1,10 +1,14 @@
-import image from '../assets/image/cart.png'
+import { Badge } from '@mui/material';
+import { ShoppingCartOutlined } from '@mui/icons-material';
 import '../assets/styles/CartWidget.css'
 
-const CartWidget = () =>{
+const CartWidget = () => {
+
 	return (
 		<>
-		<div className="shoping__cart cart"><img src={image } alt='img'/></div>
+			<Badge color="secondary" badgeContent={0}>
+			<ShoppingCartOutlined />
+			</Badge>
 		</>
 	)
 };

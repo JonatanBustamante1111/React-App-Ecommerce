@@ -8,19 +8,35 @@ const CartContextProvider = (props) => {
 
     const [cartList, setCartList] = useState([]);
 
+    // Si el item existe
     const addToCart = (item) => {
-        setCartList([
-            ...cartList,item
-        ])
+        let exist = cartList.find(element => element.id === item.id);
+        if (exist) {
+            console.log('esta ok')
+        } else {
+            setCartList([
+                ...cartList, item
+            ])
+        }
     }
-    
+
+    const clear = () => {
+        // colocamos otro array 
+        setCartList ([]);
+    }
+
+    const deleteItem = (item) => {
+          const newArray = cartList.filter(element => element.id !== item.id)
+            setCartList(newArray)
+        }
+
     return (
-    
-    <CartContext.Provider value={{cartList,addToCart}}>
 
-        {props.children}
+        <CartContext.Provider value={{ cartList, addToCart, clear, deleteItem }}>
 
-    </CartContext.Provider>
+            {props.children}
+
+        </CartContext.Provider>
     )
 }
 
