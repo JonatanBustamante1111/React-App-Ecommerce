@@ -4,4 +4,7 @@
     .navbar-collapse{
         margin-left: 200px;
       }
+    .shoping__cart{
+      order: 3;
+    } 
 }

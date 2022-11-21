@@ -1,15 +1,8 @@
 import "../assets/styles/Item.css"
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { CartContext } from "./CartContext";
 // funcion que renderiza
 const  Item = (item) => {
-  const {addToCart} = useContext(CartContext);
 
-  const onFire = () => {
-    console.log('ok')
-    addToCart(item)
-  }
   return (
     <>
       <div className="contenedor-principal">
@@ -19,9 +12,9 @@ const  Item = (item) => {
             <div className="icons d-flex justify-content-center">
               {/* <a href="#"><i className="ion-star"></i></a> */}
               {/* <a href="#"> <i className="ion-share"></i></a> */}
-              <Link to={`/item/${item.id}`}><i class="ion-search"></i></Link>
+              {/* <Link><i class="ion-search"></i></Link> */}
             </div>
-            <Link   class="add-to-cart" onClick={onFire}>Agregar a Carrito</Link>
+            <Link  class="add-to-cart" to={`/item/${item.id}`} >Ver detalle</Link>
           </div>
           <figcaption>
             <div className="price">

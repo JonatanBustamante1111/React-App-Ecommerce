@@ -1,4 +1,4 @@
-/* codigo carrito logo */
+/* /* codigo carrito logo */
 .shoping__cart{
   width: 40px;
 }
@@ -24,14 +24,7 @@
     color: white;
     padding: 2px;
   }
-  @media(min-width:992px){
-    .media{
-        display: flex;
-    }
-    .shoping__cart{
-        order: 3;
-    }
-}
+
 
 
 /* contenedor principal */
@@ -39,4 +32,4 @@
   #basic-navbar-nav{
     padding-left: 150px;
    }
-}
+} 
