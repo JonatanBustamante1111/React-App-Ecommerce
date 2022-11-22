@@ -12,27 +12,32 @@ const CartContextProvider = (props) => {
 
     // Si el item existe
     const addToCart = (item,qty) => {
-        let exist = cartList.find(element => element.id === item.id);
-        if (exist === undefined) {
+        let found = cartList.find(element => element.id === item.id);
+        if (found === undefined) {
             setCartList([
                 ...cartList, {
                     idItem: item.id,
                     imgItem:item.img,
                     nameItem: item.title,
                     quantityItem:qty,
+                    priceItem: item.price,
                 }
             ])
         } else {
-            exist.quantityItem += qty;
+            found.quantityItem += qty;
         }
     }
 
     const sumCartQuantity = () => { 
         let acc = 0;  
-        cartList.map(item => acc = acc+item.quantityItem);
+        cartList.map(item => acc += item.quantityItem);
         return acc;
     }
-    console.log(sumCartQuantity())
+    const sumCartPrice = () => {
+        let acc = 0;
+        cartList.map(item => acc += (item.quantityItem*item.priceItem));
+        return acc;
+    }
     const clear = () => {
         // colocamos otro array 
         setCartList ([]);
@@ -45,7 +50,7 @@ const CartContextProvider = (props) => {
 
     return (
 
-        <CartContext.Provider value={{ cartList, addToCart, clear, deleteItem,sumCartQuantity}}>
+        <CartContext.Provider value={{ cartList, addToCart, clear, deleteItem,sumCartQuantity,sumCartPrice}}>
 
             {props.children}
 
