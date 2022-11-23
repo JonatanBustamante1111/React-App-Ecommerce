@@ -16,13 +16,13 @@ const Cart = () => {
           </th>
           <th>Sub Total</th>
         </tr>
-      </thead>
+      </thead>  
         </Table>
       {
         // si el carrito tiene productos los muestro
         cartList.length > 0
             ?
-            cartList.map(item => <TableCart key={item.idItem} img={item.imgItem} title={item.nameItem} qty={item.quantityItem} price={item.priceItem}></TableCart>)
+            cartList.map(item => <TableCart key={item.idItem} id={item.idItem} img={item.imgItem} title={item.nameItem} qty={item.quantityItem} price={item.priceItem}></TableCart>)
             : <h2 className="text-center uppercase">tu carrito esta vacio</h2>
       }
       <div className="text-end p-5">TOTAL: {sumCartPrice()}</div>

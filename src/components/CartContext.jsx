@@ -43,8 +43,8 @@ const CartContextProvider = (props) => {
         setCartList ([]);
     }
 
-    const deleteItem = (item) => {
-          const newArray = cartList.filter(element => element.id !== item.id)
+    const deleteItem = (props) => {
+          const newArray = cartList.filter(element => element.id !== props.id)
             setCartList(newArray)
         }
 
