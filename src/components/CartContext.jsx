@@ -11,8 +11,9 @@ const CartContextProvider = (props) => {
 
 
     // Si el item existe
+
     const addToCart = (item,qty) => {
-        let found = cartList.find(element => element.id === item.id);
+        let found = cartList.find(element => element.idItem === item.id)
         if (found === undefined) {
             setCartList([
                 ...cartList, {
@@ -23,14 +24,14 @@ const CartContextProvider = (props) => {
                     priceItem: item.price,
                 }
             ])
-        } else {
+        }else {
             found.quantityItem += qty;
         }
     }
 
     const sumCartQuantity = () => { 
         let acc = 0;  
-        cartList.map(item => acc += item.quantityItem);
+        cartList.forEach(item => acc += item.quantityItem);
         return acc;
     }
     const sumCartPrice = () => {
@@ -43,8 +44,8 @@ const CartContextProvider = (props) => {
         setCartList ([]);
     }
 
-    const deleteItem = (props) => {
-          const newArray = cartList.filter(element => element.id !== props.id)
+    const deleteItem = (id) => {
+          const newArray = cartList.filter(element => element.idItem !== id )
             setCartList(newArray)
         }
 

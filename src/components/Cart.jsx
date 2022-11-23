@@ -16,7 +16,7 @@ const Cart = () => {
           </th>
           <th>Sub Total</th>
         </tr>
-      </thead>  
+        </thead>  
         </Table>
       {
         // si el carrito tiene productos los muestro
