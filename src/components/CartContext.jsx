@@ -24,8 +24,15 @@ const CartContextProvider = (props) => {
                     priceItem: item.price,
                 }
             ])
-        }else {
-            found.quantityItem += qty;
+        }else{
+            const cartUpdated = cartList.map(element => {
+                if(element.idItem === item.id){
+                    return{...element,quantityItem:element.quantityItem +qty,}
+                }else {
+                    return element;
+                }
+            })
+            setCartList(cartUpdated);
         }
     }
 
@@ -40,7 +47,6 @@ const CartContextProvider = (props) => {
         return acc;
     }
     const clear = () => {
-        // colocamos otro array 
         setCartList ([]);
     }
 
