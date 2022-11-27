@@ -6,9 +6,9 @@ export const CartContext = createContext();
 
 
 const CartContextProvider = (props) => {
-    
-    const [cartList, setCartList] = useState([]);
+    const [datos, setDatos] = useState([]);
 
+    const [cartList, setCartList] = useState([]);
 
     // Si el item existe
 
@@ -57,7 +57,7 @@ const CartContextProvider = (props) => {
 
     return (
 
-        <CartContext.Provider value={{ cartList, addToCart, clear, deleteItem,sumCartQuantity,sumCartPrice}}>
+        <CartContext.Provider value={{datos,setDatos, cartList, addToCart, clear, deleteItem,sumCartQuantity,sumCartPrice}}>
 
             {props.children}
 

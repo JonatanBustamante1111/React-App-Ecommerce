@@ -1,50 +1,46 @@
 import ItemList from "./ItemList";
 import Wrapper from "./Wrapper";
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import { useParams } from "react-router-dom";
 import {db} from '../utilis/firebaseConfig'
-
+import{collection, getDocs} from "firebase/firestore"
+import { CartContext } from "./CartContext"
+import { useContext } from "react"
+// import firestoreFetch from "../utilis/firestoreFetch";
 
 const ItemListContainer = ({ greeting }) => {
     // url params
-    const [datos, setDatos] = useState([]);
-    console.log(datos)
+    const {datos,setDatos} = useContext(CartContext)
+
     const { idCategory } = useParams()
 
-    useEffect(()=>{
-        async function fetchData(){
-            const response = await db.getData(datos);
+    async function getProductos() {
+        const collectionRef = collection(db, "products");
+        let results = await getDocs(collectionRef);
+        let dataProductos = results.docs.map( doc => { 
+            return { id: doc.id, ...doc.data()};
+           })
+        return dataProductos;  
+    }
+    
+     useEffect(() =>    {
+      getProductos().then((data) => {
+        if (idCategory === undefined) {
+            setTimeout(() => {
+                setDatos(data);
+            },2000);
+        } else {
+            setTimeout(() => {
+                setDatos(data.filter(item => item.categoryId == idCategory));
+            },2000);
         }
-        fetchData()
-     
-    },[datos])
-    // useEffect( async () => {
-    //     const querySnapshot = await getDocs(collection(db, "products"));
-    //     const dataFromFirestore = querySnapshot.docs.map(item => ({
-    //         id: item.id,
-    //         ...item.data()
-    //     }))
-    //     setDatos(dataFromFirestore)
-    // })
-    console.log(datos)
+     });
+    }) 
     // useEffect(() => {
-    //     return( () => {
-    //         setDatos([])
-    //     })
-    // }, [])
-
-        //     useEffect (() => {
-//         if (idCategory === undefined) {
-//             setTimeout(() => {
-//                 setDatos(data);
-//             },2000);
-//         } else {
-//             setTimeout(() => {
-//                 setDatos(data.filter(item => item.categoryId === idCategory));
-//             },2000);
-//         }
-// }, [idCategory]);
-
+    //     firestoreFetch(idCategory)
+    //     .then(result => setDatos(result))
+    //     .catch(err => console.log(err))
+    // })
 
 return (
     

@@ -11,7 +11,7 @@ const Home = () => {
     return (
         <CartContextProvider>
         <BrowserRouter>
-            <NavBar />
+            <NavBar />  
             <Routes>    
                 <Route path="/" element={<ItemListContainer greeting="Hola mundo" />} />
                 {/* idCategory = url params */}
