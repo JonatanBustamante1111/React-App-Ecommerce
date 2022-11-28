@@ -22,7 +22,6 @@ const ItemListContainer = ({ greeting }) => {
            })
         return dataProductos;  
     }
-    
      useEffect(() =>    {
       getProductos().then((data) => {
         if (idCategory === undefined) {
@@ -31,11 +30,12 @@ const ItemListContainer = ({ greeting }) => {
             },2000);
         } else {
             setTimeout(() => {
-                setDatos(data.filter(item => item.categoryId == idCategory));
+                setDatos(data.filter(item => parseInt(item.categoryId) === parseInt(idCategory)));
             },2000);
         }
      });
     }) 
+    console.log(datos)
     // useEffect(() => {
     //     firestoreFetch(idCategory)
     //     .then(result => setDatos(result))
