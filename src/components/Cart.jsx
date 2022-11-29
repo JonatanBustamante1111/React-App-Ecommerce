@@ -4,31 +4,11 @@ import { CartContext } from "./CartContext";
 import TableCart from "./TableCart";
 import { Link } from "react-router-dom";
 import OrderSummary from "./OrderSummary";
-import { serverTimestamp } from "firebase/firestore";
+
 const Cart = () => {
     
-    const { cartList, sumCartPrice, clear, discount,sumTot } = useContext(CartContext)
+    const { cartList, clear} = useContext(CartContext)
 
-    const createOrder = () => {
-      let order = {
-        buyer: {
-          name: "Jonatan Bustamante",
-          email: "jonatabustamante710@gmail.com",
-          phone: "2241553190"
-        },
-        date: serverTimestamp(),
-        items: cartList.map(
-          item => ({
-            id:item.idItem,
-            price:item.priceItem,
-            title:item.nameItem,
-            qty: item.quantityItem
-          })
-        ),
-        tot: sumTot(),
-      }
-      console.log(order)
-    }
     return (
         <> 
         <Link to='/'><h2 className="btn">Continua comprando</h2></Link>
@@ -58,7 +38,7 @@ const Cart = () => {
             <div className="w-50 order-3 w-md-25 h-md-50 p-2 order-1">
               {
                   cartList.length > 0 &&
-                  <OrderSummary subtot={sumCartPrice()} desc={discount()} tot={sumTot()} createOrder={createOrder}></OrderSummary>
+                  <OrderSummary></OrderSummary>
               }
             </div>
       </div>
