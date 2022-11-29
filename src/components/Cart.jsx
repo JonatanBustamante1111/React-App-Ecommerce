@@ -35,7 +35,7 @@ const Cart = () => {
                   cartList.map(item => <TableCart key={item.idItem} id={item.idItem} img={item.imgItem} title={item.nameItem} qty={item.quantityItem} price={item.priceItem}></TableCart>)
             }
           </div>
-            <div className="w-50 order-3 w-md-25 h-md-50 p-2 order-1">
+            <div className="w-50  w-md-25 h-md-50 p-2 align-self-md-start">
               {
                   cartList.length > 0 &&
                   <OrderSummary></OrderSummary>

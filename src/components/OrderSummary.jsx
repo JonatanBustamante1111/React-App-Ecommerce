@@ -1,13 +1,13 @@
 import { useContext } from "react"
 import { CartContext } from "./CartContext";
-import { serverTimestamp } from "firebase/firestore";
+import { collection, serverTimestamp } from "firebase/firestore";
 import { doc, setDoc } from "firebase/firestore"; 
 import db from "../utilis/firebaseConfig"
 
 
 const OrderSummary = () => {
 
-    const { cartList, sumCartPrice, discount,sumTot } = useContext(CartContext)
+    const { cartList, sumCartPrice, discount,sumTot, clear } = useContext(CartContext)
     const createOrder = () => {
         let order = {
           buyer: {
@@ -27,11 +27,16 @@ const OrderSummary = () => {
           tot: sumTot(),
         }   
         const createOrderFirestore = async () => {
-            await setDoc(doc(db, "orders", "1"), order);
+            const newOrderRef = doc(collection(db,'orders'))
+            await setDoc(newOrderRef, order);
+            return newOrderRef;
         }
 
         createOrderFirestore()
-            .then(console.log('orden creada'))
+            .then(response => {
+                 alert(`La compra con ha sido un exito`);
+                 clear();   
+                })
             .catch(err => console.log(err))
       }
     return (
