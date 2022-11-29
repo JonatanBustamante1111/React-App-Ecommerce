@@ -2,7 +2,7 @@ import {useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import { doc,getDoc } from "firebase/firestore";
-import {db} from "../utilis/firebaseConfig"
+import db from "../utilis/firebaseConfig"
 
 const ItemDetailContainer =  () => {
     const  [dato,setDato] = useState({});
@@ -29,11 +29,7 @@ const ItemDetailContainer =  () => {
         .catch(err => console.log(err))
     }) 
 
-    // useEffect (() => {
-    //     setTimeout(() => {
-    //         setDato(datos.find(item => item.id === parseInt(idItem) ));
-    //     },2000);
-    // }, [idItem]);
+
     return(
         <>
         <ItemDetail  item = {dato}/>

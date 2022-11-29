@@ -46,6 +46,15 @@ const CartContextProvider = (props) => {
         cartList.map(item => acc += (item.quantityItem*item.priceItem));
         return acc;
     }
+    const discount = () => {
+        const subTot = sumCartPrice();
+        return subTot*20/100;
+    }
+    const sumTot = () => {
+        const subTot = sumCartPrice();
+        const desc = discount();
+        return subTot-desc;
+    }
     const clear = () => {
         setCartList ([]);
     }
@@ -57,7 +66,7 @@ const CartContextProvider = (props) => {
 
     return (
 
-        <CartContext.Provider value={{datos,setDatos, cartList, addToCart, clear, deleteItem,sumCartQuantity,sumCartPrice}}>
+        <CartContext.Provider value={{datos,setDatos, cartList, addToCart, clear, deleteItem,sumCartQuantity,sumCartPrice,discount,sumTot}}>
 
             {props.children}
 

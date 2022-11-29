@@ -2,11 +2,10 @@ import ItemList from "./ItemList";
 import Wrapper from "./Wrapper";
 import { useEffect} from "react";
 import { useParams } from "react-router-dom";
-import {db} from '../utilis/firebaseConfig'
+import db from '../utilis/firebaseConfig'
 import{collection, getDocs} from "firebase/firestore"
 import { CartContext } from "./CartContext"
 import { useContext } from "react"
-// import firestoreFetch from "../utilis/firestoreFetch";
 
 const ItemListContainer = ({ greeting }) => {
     // url params
@@ -35,12 +34,6 @@ const ItemListContainer = ({ greeting }) => {
         }
      });
     }) 
-    console.log(datos)
-    // useEffect(() => {
-    //     firestoreFetch(idCategory)
-    //     .then(result => setDatos(result))
-    //     .catch(err => console.log(err))
-    // })
 
 return (
     

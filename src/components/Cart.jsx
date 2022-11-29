@@ -3,10 +3,32 @@ import { Table } from "react-bootstrap";
 import { CartContext } from "./CartContext";
 import TableCart from "./TableCart";
 import { Link } from "react-router-dom";
-
+import OrderSummary from "./OrderSummary";
+import { serverTimestamp } from "firebase/firestore";
 const Cart = () => {
     
-    const { cartList, sumCartPrice, clear } = useContext(CartContext)
+    const { cartList, sumCartPrice, clear, discount,sumTot } = useContext(CartContext)
+
+    const createOrder = () => {
+      let order = {
+        buyer: {
+          name: "Jonatan Bustamante",
+          email: "jonatabustamante710@gmail.com",
+          phone: "2241553190"
+        },
+        date: serverTimestamp(),
+        items: cartList.map(
+          item => ({
+            id:item.idItem,
+            price:item.priceItem,
+            title:item.nameItem,
+            qty: item.quantityItem
+          })
+        ),
+        tot: sumTot(),
+      }
+      console.log(order)
+    }
     return (
         <> 
         <Link to='/'><h2 className="btn">Continua comprando</h2></Link>
@@ -16,30 +38,38 @@ const Cart = () => {
       
           <thead>
           <tr className='text-center'>
-            <th>Producto</th>
-            <th>Cantidad/Precio
+            <th className="w-25">Producto</th>
+            <th className="w-25">Cantidad/Precio
             </th>
             <th className="text-start">Sub Total</th>
           </tr>
           </thead>  
           </Table>
         }
-       
-      {
-        // si el carrito tiene productos los muestro
-        cartList.length > 0 &&
-            cartList.map(item => <TableCart key={item.idItem} id={item.idItem} img={item.imgItem} title={item.nameItem} qty={item.quantityItem} price={item.priceItem}></TableCart>)
-      }
-        {
-          (cartList.length > 0)
-          ? <button className="btn btn-danger m-4" onClick={clear}>Vaciar carrito</button>
-          : <h2 className="text-center uppercase">tu carrito esta vacio</h2>
-        }
-        {
-          cartList.length > 0 &&
-          <div className="text-end p-5">TOTAL: {sumCartPrice()}</div>
-        }
-     
+      <div className="d-flex flex-column flex-nowrap align-items-center flex-md-row justify-content-md-between">
+        
+          <div className="w-100 w-md-75">
+            {
+              // si el carrito tiene productos los muestro
+              cartList.length > 0 &&
+                  cartList.map(item => <TableCart key={item.idItem} id={item.idItem} img={item.imgItem} title={item.nameItem} qty={item.quantityItem} price={item.priceItem}></TableCart>)
+            }
+          </div>
+            <div className="w-50 order-3 w-md-25 h-md-50 p-2 order-1">
+              {
+                  cartList.length > 0 &&
+                  <OrderSummary subtot={sumCartPrice()} desc={discount()} tot={sumTot()} createOrder={createOrder}></OrderSummary>
+              }
+            </div>
+      </div>
+
+        <div>
+          {
+            (cartList.length > 0)
+            ? <button className="btn btn-danger m-4" onClick={clear}>Vaciar carrito</button>
+            : <h2 className="text-center uppercase">tu carrito esta vacio</h2>
+          }
+        </div>
     </>
     )
 }
