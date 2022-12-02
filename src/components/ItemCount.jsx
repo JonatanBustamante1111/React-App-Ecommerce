@@ -31,5 +31,5 @@ const ItemCount = ({initial = 1, onAdd}) => {
         </div>    
     )
 };
-
+// prueba
 export default ItemCount;   
