@@ -1,7 +1,7 @@
 import { Add, Remove } from '@mui/icons-material';
 import { useState,useEffect } from 'react';
 
-const ItemCount = () => {
+const ItemCount = ({initial = 1, onAdd}) => {
     const [count, setCount] = useState(0);
 
     useEffect(() => {
@@ -26,9 +26,9 @@ const ItemCount = () => {
                 <div className='fs-4'>{count}</div>
                 <button className='border-0' variant="text" onClick={decrement}><Remove /></button>
             </div>
-            <button className="btn btn-primary">ADD TO CART</button>
+            <button className="btn btn-primary" onClick={() =>onAdd(count)}>ADD TO CART</button>
         </div>
     )
 };
 
-export default ItemCount;
+export default ItemCount;   
