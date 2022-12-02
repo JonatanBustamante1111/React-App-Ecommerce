@@ -32,4 +32,4 @@ const ItemCount = ({initial = 1, onAdd}) => {
     )
 };
 
-export default ItemCount;
+export default ItemCount;   
