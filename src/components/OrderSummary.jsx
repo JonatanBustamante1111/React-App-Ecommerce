@@ -34,7 +34,7 @@ const OrderSummary = () => {
 
         createOrderFirestore()
             .then(response => {
-                 alert(`La compra con ha sido un exito`);
+                 alert(`La compra con id: "${response.id}" ha sido un exito`);
                  clear();   
                 })
             .catch(err => console.log(err))
