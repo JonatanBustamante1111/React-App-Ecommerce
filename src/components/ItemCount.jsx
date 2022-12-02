@@ -30,5 +30,5 @@ const ItemCount = () => {
         </div>
     )
 };
-// algo
+
 export default ItemCount;
