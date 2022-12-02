@@ -1,21 +1,38 @@
-import { data } from "../utilis/data";
-import { useEffect, useState } from "react";
+import {useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
+import { doc,getDoc } from "firebase/firestore";
+import db from "../utilis/firebaseConfig"
 
 const ItemDetailContainer =  () => {
-
     const  [dato,setDato] = useState({});
+
     const { idItem } = useParams()
+
+    async function getProducto () {
+        const docRef = doc(db,"products", idItem)
+        const result = await getDoc(docRef);
+
+        if(result.exists()){
+            return{
+                id:idItem,
+                ...result.data()
+            }
+        } else {
+            console.log("no such document")
+        }
+    }
+
     useEffect (() => {
-        setTimeout(() => {
-            setDato(data.find(item => item.id === parseInt(idItem) ));
-        },2000);
-    }, [idItem]);
+        getProducto()
+        .then(result => setDato(result))
+        .catch(err => console.log(err))
+    }) 
+
 
     return(
         <>
-        <ItemDetail key={dato.id} id ={ dato.id }  img ={ dato.img } title = {dato.title} description = {dato.description} price= {dato.price} />
+        <ItemDetail  item = {dato}/>
         </>
     )
 }

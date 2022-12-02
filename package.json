@@ -1,4 +1,5 @@
 {
+  "homepage": "https://JonatanBustamante1111.github.io/React-App-Ecommerce",
   "name": "react-ecommerce",
   "version": "0.1.0",
   "private": true,
@@ -13,9 +14,11 @@
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.2.2",
     "bootstrap-icons": "^1.9.1",
+    "firebase": "^9.14.0",
     "react": "^18.2.0",
     "react-bootstrap": "^1.5.2",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.6.0",
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.6",
@@ -24,8 +27,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -44,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }

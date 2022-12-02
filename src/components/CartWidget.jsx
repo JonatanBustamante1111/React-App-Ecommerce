@@ -1,10 +1,16 @@
-import image from '../assets/image/cart.png'
-import '../assets/styles/CartWidget.css'
+import { Badge } from '@mui/material';
+import { ShoppingCartOutlined } from '@mui/icons-material';
+import { useContext } from 'react';
+import { CartContext } from './CartContext';
 
-const CartWidget = () =>{
+const CartWidget = () => {
+	const {sumCartQuantity} = useContext(CartContext);	
+	
 	return (
 		<>
-		<div className="shoping__cart cart"><img src={image } alt='img'/></div>
+			<Badge badgeContent={sumCartQuantity()} color="secondary" >
+			<ShoppingCartOutlined />
+			</Badge>
 		</>
 	)
 };
