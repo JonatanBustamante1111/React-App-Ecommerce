@@ -1,5 +1,4 @@
 {
-  "homepage": "https://JonatanBustamante1111.github.io/React-App-Ecommerce",
   "name": "react-ecommerce",
   "version": "0.1.0",
   "private": true,
@@ -26,8 +25,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "deploy": "gh-pages -d build"
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
@@ -46,8 +44,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gh-pages": "^4.0.0"
   }
 }

@@ -26,7 +26,7 @@ const ItemCount = ({initial = 1, onAdd}) => {
                 <div className='fs-4'>{count}</div>
                 <button className='border-0' variant="text" onClick={decrement}><Remove /></button>
             </div>
-            <button className="btn btn-primary" onClick={() =>onAdd(count)}>ADD TO CART</button>
+            <button className="btn btn-primary" onClick={() =>onAdd()}>ADD TO CART</button>
         </div>
     )
 };
